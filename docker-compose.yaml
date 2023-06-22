@@ -6,7 +6,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     build: .
     depends_on:
-      - trio-db:v1
+      - mysql
     deploy:
       replicas: 3
     networks:
@@ -21,7 +21,7 @@ services:
   ngnix:
     image: nginx:alpine
     depends_on:
-      - trio-db:v1
+      - mysql
     networks:
       - trio-net
     ports:
