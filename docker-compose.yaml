@@ -15,7 +15,7 @@ services:
     image: trio-db:v1
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    build: ../db/
+    build: ./db/
     networks:
       - trio-net
   ngnix:
