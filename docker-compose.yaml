@@ -4,7 +4,7 @@ services:
     image: trio-app:v1
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    build: .
+    build: ./flask-app/
     depends_on:
       - mysql
     deploy:
@@ -15,7 +15,7 @@ services:
     image: trio-db:v1
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    build: .
+    build: ../db/
     networks:
       - trio-net
   ngnix:
